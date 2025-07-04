@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curvy Elegance - Plus Size Women's Fashion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: #f8f9fa;
+            padding: 8px 0;
+            font-size: 12px;
+            text-align: center;
+            color: #666;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #e74c3c;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-bar {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 8px 40px 8px 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            width: 300px;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+        }
+
+        /* Filter and Sort Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .product-price {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-sizes {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .size-tag {
+            background: #f8f9fa;
+            padding: 2px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #34495e;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s;
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-items {
+            padding: 1rem;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-total {
+            padding: 1rem;
+            border-top: 2px solid #eee;
+            text-align: center;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* M-Pesa Payment Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 2rem;
+            border: none;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .mpesa-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mpesa-form input {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .mpesa-logo {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .mpesa-logo img {
+            width: 150px;
+            height: auto;
+        }
+
+        .mpesa-submit {
+            background: #00a86b;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .mpesa-submit:hover {
+            background: #008c5a;
+        }
+
+        .payment-status {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .payment-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .payment-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ecf0f1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .search-bar input {
+                width: 200px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            Free shipping on orders over KSh 5,000 • Easy returns within 30 days
+        </div>
+        <nav class="nav-container">
+            <a href="#" class="logo">Curvy Elegance</a>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="filterProducts('all')">All</a></li>
+                <li><a href="#" onclick="filterProducts('dresses')">Dresses</a></li>
+                <li><a href="#" onclick="filterProducts('tops')">Tops</a></li>
+                <li><a href="#" onclick="filterProducts('bottoms')">Bottoms</a></li>
+                <li><a href="#" onclick="filterProducts('outerwear')">Outerwear</a></li>
+                <li><a href="#" onclick="filterProducts('sale')">Sale</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products..." id="searchInput">
+                    <button onclick="searchProducts()">🔍</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Embrace Your Curves</h1>
+            <p>Discover stunning plus-size fashion that celebrates your unique beauty</p>
+            <a href="#products" class="cta-button">Shop Now</a>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" id="products">
+            <div class="filter-group">
+                <label for="sizeFilter">Size:</label>
+                <select id="sizeFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="">All Sizes</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="3XL">3XL</option>
+                    <option value="4XL">4XL</option>
+                    <option value="5XL">5XL</option>
+                </select>
+                <label for="colorFilter">Color:</label>
+                <select id="colorFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="">All Colors</option>
+                    <option value="Black">Black</option>
+                    <option value="Navy">Navy</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="Pink">Pink</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sortBy">Sort by:</label>
+                <select id="sortBy" class="filter-select" onchange="sortProducts()">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest</option>
+                    <option value="rating">Best Rating</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <section class="product-grid" id="productGrid">
+            <!-- Products will be populated by JavaScript -->
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()" class="close">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        <div class="cart-total">
+            <div style="margin-bottom: 1rem;">
+                <strong>Total: KSh <span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="showCheckout()">Checkout with M-Pesa</button>
+        </div>
+    </div>
+
+    <!-- M-Pesa Payment Modal -->
+    <div id="mpesaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="mpesa-logo">
+                <h2 style="color: #00a86b; text-align: center;">M-Pesa Payment</h2>
+                <p style="text-align: center; color: #666;">Pay securely with M-Pesa</p>
+            </div>
+            <form class="mpesa-form" id="mpesaForm">
+                <input type="tel" placeholder="Phone Number (254...)" id="phoneNumber" required>
+                <input type="text" placeholder="Amount (KSh)" id="amount" readonly>
+                <input type="text" placeholder="Transaction Description" id="description" readonly>
+                <button type="submit" class="mpesa-submit" id="mpesaSubmit">
+                    Pay with M-Pesa
+                </button>
+            </form>
+            <div class="payment-status" id="paymentStatus">
+                <!-- Payment status will be shown here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Curvy Elegance. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: "Elegant Floral Maxi Dress",
+                price: 4500,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjcwIiB5PSI1MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiNFNzRDM0MiIHJ4PSIxMCIvPgo8dGV4dCB4PSIxNDAiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzMzMzMzMyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5FbGVnYW50IERyZXNzPC90ZXh0Pgo8L3N2Zz4K",
+                category: "dresses",
+                sizes: ["XL", "XXL", "3XL", "4XL"],
+                colors: ["Red", "Blue", "Green"],
+                rating: 4.5,
+                isNew: true,
+                onSale: false
+            },
+            {
+                id: 2,
+                name: "Comfortable Stretch Jeans",
+                price: 3200,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjkwIiB5PSI3MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiM0Njc0QkYiIHJ4PSI1Ii8+Cjx0ZXh0IHg9IjE0MCIgeT0iMzMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzMzMzMzIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPlN0cmV0Y2ggSmVhbnM8L3RleHQ+Cjwvc3ZnPgo=",
+                category: "bottoms",
+                sizes: ["XL", "XXL", "3XL", "4XL", "5XL"],
+                colors: ["Navy", "Black", "Blue"],
+                rating: 4.8,
+                isNew: false,
+                onSale: true,
+                originalPrice: 4000
+            },
+            {
+                id: 3,
+                name: "Cozy Oversized Sweater",
+                price: 2800,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjYwIiB5PSI2MCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiM3RjVBRkYiIHJ4PSIxNSIvPgo8dGV4dCB4PSIxNDAiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzMzMzMzMyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5Db3p5IFN3ZWF0ZXI8L3RleHQ+Cjwvc3ZnPgo=",
+                category: "tops",
+                sizes: ["XL", "XXL", "3XL"],
+                colors: ["Pink", "Gray", "Black"],
+                rating: 4.3,
+                isNew: true,
+                onSale: false
+            },
+            {
+                id: 4,
+                name: "Professional Blazer",
+                price: 5200,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjcwIiB5PSI2MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMyQzNFNTAiIHJ4PSI4Ii8+Cjx0ZXh0IHg9IjE0MCIgeT0iMzMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzMzMzMzIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPlByb2Zlc3Npb25hbCBCbGF6ZXI8L3RleHQ+Cjwvc3ZnPgo=",
+                category: "outerwear",
+                sizes: ["XL", "XXL", "3XL", "4XL"],
+                colors: ["Black", "Navy", "Gray"],
+                rating: 4.6,
+                isNew: false,
+                onSale: true,
+                originalPrice: 6500
+            },
+            {
+                id: 5,
+                name: "Casual Cotton Blouse",
+                price: 2200,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjgwIiB5PSI4MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiNGRkI3QzUiIHJ4PSI2Ii8+Cjx0ZXh0IHg9IjE0MCIgeT0iMzMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzMzMzMzIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPkNvdHRvbiBCbG91c2U8L3RleHQ+Cjwvc3ZnPgo=",
+                category: "tops",
+                sizes: ["XL", "XXL", "3XL", "4XL", "5XL"],
+                colors: ["Pink", "White", "Blue"],
+                rating: 4.4,
+                isNew: false,
+                onSale: false
+            },
+            {
+                id: 6,
+                name: "Evening Cocktail Dress",
+                price: 6800,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjYwIiB5PSI0MCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIyNzAiIGZpbGw9IiM5QjU5QjYiIHJ4PSIxMiIvPgo8dGV4dCB4PSIxNDAiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzMzMzMzMyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5Db2NrdGFpbCBEcmVzczwvdGV4dD4KPC9zdmc+Cg==",
+                category: "dresses",
+                sizes: ["XL", "XXL", "3XL"],
+                colors: ["Black", "Navy", "Purple"],
+                rating: 4.7,
+                isNew: true,
+                onSale: false
+            },
+            {
+                id: 7,
+                name: "Comfortable Leggings",
+                price: 1800,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjEwMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiMzNDQ5NUUiIHJ4PSI0Ii8+Cjx0ZXh0IHg9IjE0MCIgeT0iMzMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMzMzMzMzIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiPkNvbWZvcnQgTGVnZ2luZ3M8L3RleHQ+Cjwvc3ZnPgo=",
+                category: "bottoms",
+                sizes: ["XL", "XXL", "3XL", "4XL", "5XL"],
+                colors: ["Black", "Gray", "Navy"],
+                rating: 4.9,
+                isNew: false,
+                onSale: true,
+                originalPrice: 2200
+            },
+            {
+                id: 8,
+                name: "Stylish Cardigan",
+                price: 3600,
+                image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDI4MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMzUwIiBmaWxsPSIjRjhGOUZBIi8+CjxyZWN0IHg9IjUwIiB5PSI2MCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGRjdENEMiIHJ4PSIxMCIvPgo8dGV4dCB4PSIxNDAiIHk9IjMzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzMzMzMzMyIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0Ij5TdHlsaXNoIENhcmRpZ2FuPC90ZXh0Pgo8L3N2Zz4K",
+                category: "outerwear",
+                sizes: ["XL", "XXL", "3XL", "4XL"],
+                colors: ["Orange", "Gray", "Pink"],
+                rating: 4.2,
+                isNew: false,
+                onSale: false
+            }
+        ];
+
+        // Shopping cart
+        let cart = [];
+        let filteredProducts = [...products];
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            displayProducts(products);
+            updateCartCount();
+        });
+
+        // Display products
+        function displayProducts(productsToShow) {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = '';
+
+            productsToShow.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-price">
+                            KSh ${product.price.toLocaleString()}
+                            ${product.onSale ? `<span style="text-decoration: line-through; color: #999; font-size: 0.9rem;">KSh ${product.originalPrice.toLocaleString()}</span>` : ''}
+                        </div>
+                        <div class="product-sizes">
+                            ${product.sizes.map(size => `<span class="size-tag">${size}</span>`).join('')}
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            ${product.colors.map(color => `<div style="width: 20px; height: 20px; background: ${getColorHex(color)}; border-radius: 50%; border: 1px solid #ddd;"></div>`).join('')}
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <span style="color: #f39c12;">★</span> ${product.rating}
+                            ${product.isNew ? '<span style="background: #e74c3c; color: white; padding: 2px 6px; border-radius: 3px; font-size: 10px; margin-left: 5px;">NEW</span>' : ''}
+                            ${product.onSale ? '<span style="background: #27ae60; color: white; padding: 2px 6px; border-radius: 3px; font-size: 10px; margin-left: 5px;">SALE</span>' : ''}
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        // Get color hex codes
+        function getColorHex(colorName) {
+            const colors = {
+                'Black': '#000000',
+                'White': '#ffffff',
+                'Red': '#e74c3c',
+                'Blue': '#3498db',
+                'Navy': '#2c3e50',
+                'Green': '#27ae60',
+                'Pink': '#e91e63',
+                'Gray': '#95a5a6',
+                'Orange': '#f39c12',
+                'Purple': '#9b59b6'
+            };
+            return colors[colorName] || '#cccccc';
+        }
+
+        // Filter products
+        function filterProducts(category) {
+            if (category === 'all') {
+                filteredProducts = [...products];
+            } else if (category === 'sale') {
+                filteredProducts = products.filter(p => p.onSale);
+            } else {
+                filteredProducts = products.filter(p => p.category === category);
+            }
+            displayProducts(filteredProducts);
+        }
+
+        // Apply filters
+        function applyFilters() {
+            const sizeFilter = document.getElementById('sizeFilter').value;
+            const colorFilter = document.getElementById('colorFilter').value;
+            
+            let filtered = [...products];
+            
+            if (sizeFilter) {
+                filtered = filtered.filter(p => p.sizes.includes(sizeFilter));
+            }
+            
+            if (colorFilter) {
+                filtered = filtered.filter(p => p.colors.includes(colorFilter));
+            }
+            
+            filteredProducts = filtered;
+            displayProducts(filteredProducts);
+        }
+
+        // Sort products
+        function sortProducts() {
+            const sortBy = document.getElementById('sortBy').value;
+            let sorted = [...filteredProducts];
+            
+            switch(sortBy) {
+                case 'price-low':
+                    sorted.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    sorted.sort((a, b) => b.price - a.price);
+                    break;
+                case 'newest':
+                    sorted.sort((a, b) => b.isNew - a.isNew);
+                    break;
+                case 'rating':
+                    sorted.sort((a, b) => b.rating - a.rating);
+                    break;
+                default:
+                    // Featured - keep original order
+                    break;
+            }
+            
+            displayProducts(sorted);
+        }
+
+        // Search products
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (searchTerm.trim() === '') {
+                displayProducts(products);
+                return;
+            }
+            
+            const searchResults = products.filter(p => 
+                p.name.toLowerCase().includes(searchTerm) ||
+                p.category.toLowerCase().includes(searchTerm)
+            );
+            
+            displayProducts(searchResults);
+        }
+
+        // Add to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    ...product,
+                    quantity: 1,
+                    selectedSize: product.sizes[0],
+                    selectedColor: product.colors[0]
+                });
+            }
+            
+            updateCartCount();
+            updateCartDisplay();
+            
+            // Show feedback
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.style.background = '#27ae60';
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = '#2c3e50';
+            }, 1000);
+        }
+
+        // Update cart count
+        function updateCartCount() {
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Update cart display
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; color: #666; padding: 2rem;">Your cart is empty</p>';
+                cartTotal.textContent = '0';
+                return;
+            }
+            
+            cartItems.innerHTML = '';
+            let total = 0;
+            
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-info">
+                        <h4>${item.name}</h4>
+                        <p>Size: ${item.selectedSize} | Color: ${item.selectedColor}</p>
+                        <p>KSh ${item.price.toLocaleString()} x ${item.quantity}</p>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                            <button onclick="updateQuantity(${item.id}, -1)" style="background: #e74c3c; color: white; border: none; padding: 2px 6px; border-radius: 3px; cursor: pointer;">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" style="background: #27ae60; color: white; border: none; padding: 2px 6px; border-radius: 3px; cursor: pointer;">+</button>
+                            <button onclick="removeFromCart(${item.id})" style="background: #666; color: white; border: none; padding: 2px 6px; border-radius: 3px; cursor: pointer; margin-left: auto;">Remove</button>
+                        </div>
+                    </div>
+                `;
+                cartItems.appendChild(cartItem);
+                total += item.price * item.quantity;
+            });
+            
+            cartTotal.textContent = total.toLocaleString();
+        }
+
+        // Update quantity
+        function updateQuantity(productId, change) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(productId);
+                } else {
+                    updateCartCount();
+                    updateCartDisplay();
+                }
+            }
+        }
+
+        // Remove from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartCount();
+            updateCartDisplay();
+        }
+
+        // Toggle cart
+        function toggleCart() {
+            const cartSidebar = document.getElementById('cartSidebar');
+            cartSidebar.classList.toggle('open');
+            updateCartDisplay();
+        }
+
+        // Show checkout modal
+        function showCheckout() {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            if (total === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            document.getElementById('amount').value = total;
+            document.getElementById('description').value = `Curvy Elegance Purchase - ${cart.length} items`;
+            document.getElementById('mpesaModal').style.display = 'block';
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('mpesaModal').style.display = 'none';
+            document.getElementById('paymentStatus').style.display = 'none';
+            document.getElementById('paymentStatus').className = 'payment-status';
+        }
+
+        // M-Pesa Integration
+        document.getElementById('mpesaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const amount = document.getElementById('amount').value;
+            const description = document.getElementById('description').value;
+            const submitButton = document.getElementById('mpesaSubmit');
+            const paymentStatus = document.getElementById('paymentStatus');
+            
+            // Validate phone number
+            if (!phoneNumber.match(/^254[0-9]{9}$/)) {
+                alert('Please enter a valid phone number starting with 254');
+                return;
+            }
+            
+            // Show loading state
+            submitButton.innerHTML = '<span class="loading"></span> Processing...';
+            submitButton.disabled = true;
+            
+            // Simulate M-Pesa API call
+            initiateSTKPush(phoneNumber, amount, description)
+                .then(response => {
+                    paymentStatus.style.display = 'block';
+                    paymentStatus.className = 'payment-status success';
+                    paymentStatus.innerHTML = `
+                        <h3>Payment Initiated!</h3>
+                        <p>Check your phone for the M-Pesa STK push notification.</p>
+                        <p>Transaction ID: ${response.transactionId}</p>
+                        <p>Please enter your M-Pesa PIN to complete the payment.</p>
+                    `;
+                    
+                    // Clear cart after successful payment initiation
+                    setTimeout(() => {
+                        cart = [];
+                        updateCartCount();
+                        updateCartDisplay();
+                        closeModal();
+                        alert('Payment completed successfully! Thank you for your purchase.');
+                    }, 5000);
+                })
+                .catch(error => {
+                    paymentStatus.style.display = 'block';
+                    paymentStatus.className = 'payment-status error';
+                    paymentStatus.innerHTML = `
+                        <h3>Payment Failed</h3>
+                        <p>${error.message}</p>
+                        <p>Please try again or contact support.</p>
+                    `;
+                })
+                .finally(() => {
+                    submitButton.innerHTML = 'Pay with M-Pesa';
+                    submitButton.disabled = false;
+                });
+        });
+
+        // M-Pesa STK Push simulation
+        async function initiateSTKPush(phoneNumber, amount, description) {
+            // This is a simulation of the Safaricom Daraja API
+            // In a real implementation, this would be handled by your backend server
+            
+            return new Promise((resolve, reject) => {
+                // Simulate API delay
+                setTimeout(() => {
+                    // Simulate success/failure (90% success rate)
+                    if (Math.random() > 0.1) {
+                        resolve({
+                            transactionId: 'TXN' + Math.random().toString(36).substr(2, 9).toUpperCase(),
+                            status: 'SUCCESS',
+                            message: 'STK push initiated successfully'
+                        });
+                    } else {
+                        reject({
+                            message: 'Payment failed. Please check your phone number and try again.'
+                        });
+                    }
+                }, 3000);
+            });
+        }
+
+        // Real M-Pesa Daraja API Integration (Backend Implementation)
+        /*
+        async function initiateSTKPush(phoneNumber, amount, description) {
+            try {
+                const response = await fetch('/api/mpesa/stkpush', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        phoneNumber: phoneNumber,
+                        amount: amount,
+                        description: description
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    return data;
+                } else {
+                    throw new Error(data.message || 'Payment failed');
+                }
+            } catch (error) {
+                throw new Error('Network error. Please try again.');
+            }
+        }
+        */
+
+        // Handle click outside modal to close
+        window.onclick = function(event) {
+            const modal = document.getElementById('mpesaModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Handle search on Enter key
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+    </script>
+</body>
+</html>
